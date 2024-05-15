@@ -45,7 +45,39 @@ void print_node(Node* n){
 
 int is_valid(Node* n){
 
-    return 1;
+   int rowcheck[9][10] = {0};
+   int colcheck[9][10] = {0};
+   int subgridcheck[3][3][10] = {0};
+
+   for (int i = 0; i < 9; i++){
+      for (int j = 0; j < 9; j++){
+         
+         int num = n->sudo[i][j];
+         
+         if (rowcheck[i][num] == 1) {
+            return 0;
+         }
+         rowcheck[i][num] = 1;
+
+         if (colcheck[j][num] == 1){
+            return 0;
+         }
+         colcheck[j][num] = 1;
+
+         int subgrid_row = i / 3;
+         int subgrid_col = j / 3;
+         
+         if (subgridcheck[subgrid_row][subgrid_col][num] == 1){
+            return 0;
+         }
+
+         subgridcheck[subgrid_row][subgrid_col][num] = 1;
+
+         
+      }
+   }
+
+   return 1;
 }
 
 
