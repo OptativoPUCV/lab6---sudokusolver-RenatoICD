@@ -65,6 +65,10 @@ List* get_adj_nodes(Node* n){
       }
    }
 
+   if (filas == -1) {
+        return list;
+    }
+
    for (int k = 1; k <= 9; k++){
       Node* newnode = copy(n);
       newnode->sudo[filas][columnas] = k;
