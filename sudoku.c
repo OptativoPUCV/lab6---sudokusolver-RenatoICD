@@ -51,9 +51,8 @@ int is_valid(Node* n){
 
    for (int i = 0; i < 9; i++) {
       for (int j = 0; j < 9; j++) {
-         // Si el número es distinto de cero (es un número válido)
+         int num = n->sudo[i][j];
          if (num != 0) {
-            int num = n->sudo[i][j];
       
             if (rowcheck[i][num] == 1) {
                 return 0; 

@@ -75,3 +75,9 @@ sudoku.c:55:14: error: ‘num’ undeclared (first use in this function)
 sudoku.c:55:14: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 3e0816e
+Thu 16 May 2024 03:55:17 PM UTC: 
+ sudoku.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+ tests:  6|2
+total_score: 45/70
+08ca6d3
