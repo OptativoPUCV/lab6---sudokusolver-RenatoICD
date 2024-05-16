@@ -51,25 +51,28 @@ int is_valid(Node* n){
 
    for (int i = 0; i < 9; i++) {
       for (int j = 0; j < 9; j++) {
-         int num = n->sudo[i][j];
-   
-         if (rowcheck[i][num] == 1) {
-             return 0; 
+         // Si el número es distinto de cero (es un número válido)
+         if (num != 0) {
+            int num = n->sudo[i][j];
+      
+            if (rowcheck[i][num] == 1) {
+                return 0; 
+            }
+           
+            rowcheck[i][num] = 1;
+           
+            if (colcheck[j][num] == 1) {
+                return 0; 
+            }
+            colcheck[j][num] = 1;
+           
+            int subgrid_row = i / 3;
+            int subgrid_col = j / 3;
+            if (subgridcheck[subgrid_row][subgrid_col][num] == 1) {
+                return 0; 
+            }
+            subgridcheck[subgrid_row][subgrid_col][num] = 1;
          }
-        
-         rowcheck[i][num] = 1;
-        
-         if (colcheck[j][num] == 1) {
-             return 0; 
-         }
-         colcheck[j][num] = 1;
-        
-         int subgrid_row = i / 3;
-         int subgrid_col = j / 3;
-         if (subgridcheck[subgrid_row][subgrid_col][num] == 1) {
-             return 0; 
-         }
-         subgridcheck[subgrid_row][subgrid_col][num] = 1;
       }
     }
     return 1;

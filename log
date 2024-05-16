@@ -64,3 +64,14 @@ Thu 16 May 2024 03:41:47 PM UTC:
  tests:  3|3
 total_score: 25/70
 e888d0e
+Thu 16 May 2024 03:55:01 PM UTC: 
+ sudoku.c | 3 +++
+ 1 file changed, 3 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:55:14: error: ‘num’ undeclared (first use in this function)
+   55 |          if (num != 0) {
+      |              ^~~
+sudoku.c:55:14: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+3e0816e
